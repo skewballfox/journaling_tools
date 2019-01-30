@@ -12,7 +12,10 @@ mkdir -p $Created_Path
 
 for file in $TemplateDirectory*.md; do
     word_to_be_removed="_template"
+    study="Study"
     created_file=$(echo $(basename "${file%.*}") )
     created_file="${created_file//$word_to_be_removed/}.md"
-    cp "$file" "$Created_Path/$created_file"
+    if [ $created_file == *"Study"* ]; then
+      *cp -n "$file" "$Created_Path/$created_file"
+    fi
 done
