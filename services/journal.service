@@ -1,0 +1,18 @@
+# /etc/systemd/system/journal.service
+
+[Unit]
+Description=launch daily journal in vscode
+Wants=journal.timer
+PartOf=graphical-session.target
+
+[Service]
+Environment="DISPLAY=:0"
+Environment="XAUTHORITY=/home/daedalus/.Xauthority"
+Type=forking
+User=daedalus
+WorkingDirectory=/home/daedalus/github/daily_practice/
+ExecStart=/home/daedalus/github/daily_practice/Journal_Launcher journal.md
+
+
+[Install]
+WantedBy=user@.service

@@ -1,0 +1,18 @@
+#!/bin/bash
+
+JournalDirectory='/home/daedalus/Documents/self_log/'
+TemplateDirectory='/home/daedalus/github/daily_practice/templates/'
+Date=$(date +%Y/%m/%d)
+
+Created_Path="$JournalDirectory$Date"
+
+mkdir -p $Created_Path
+
+
+
+for file in $TemplateDirectory*.md; do
+    word_to_be_removed="_template"
+    created_file=$(echo $(basename "${file%.*}") )
+    created_file="${created_file//$word_to_be_removed/}.md"
+    cp "$file" "$Created_Path/$created_file"
+done

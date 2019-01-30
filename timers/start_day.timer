@@ -1,0 +1,9 @@
+[Unit]
+Description=Launch a start day journal early in the morning
+
+[Timer]
+OnCalendar=*-*-* 07:30:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target

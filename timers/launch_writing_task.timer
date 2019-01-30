@@ -1,0 +1,9 @@
+[Unit]
+Description=timer to create date-based directories and daily writing files
+
+[Timer]
+OnCalendar=*-*-* 01:00:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target

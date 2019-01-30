@@ -1,0 +1,17 @@
+# /etc/systemd/system/dream.service
+
+[Unit]
+Description=launch lucid dream diary in atom
+Wants=dream.timer
+PartOf=graphical-session.target
+
+[Service]
+Environment="DISPLAY=:0"
+Environment="XAUTHORITY=/home/daedalus/.Xauthority"
+Type=forking
+User=daedalus
+WorkingDirectory=/home/daedalus/github/daily_practice/
+ExecStart=/home/daedalus/github/daily_practice/Journal_Launcher dream_journal.md
+
+[Install]
+WantedBy=user@.service
