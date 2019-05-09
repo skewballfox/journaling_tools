@@ -1,8 +1,6 @@
-# Tags
+# Dream Journal for [REPLACE]
 
-# Realism (1-10 from surreal to monotonous)
-
-# Lucidity (1-10 from no dream awareness to constant dream awareness)
+# Realism, Lucidity(1-10 surreal->monotonous,no awareness->constant awareness)
 
 # People
 

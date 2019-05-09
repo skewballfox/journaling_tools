@@ -1,4 +1,6 @@
-# Questions To Answer Today
+# Mourning Journal for [REPLACE]
+
+## Questions To Answer Today
 
 
 
@@ -6,7 +8,7 @@
 
 
 
-# Ideas to explore today
+## Ideas to explore today
 
 
 
@@ -15,4 +17,3 @@
 
 
 
-# Search and Seek

@@ -5,6 +5,7 @@ JournalDirectory='/home/daedalus/Documents/self_log/'
 
 Date=$(date +%Y/%m/%d)
 
+
 File_Path="$JournalDirectory$Date/"
 
 

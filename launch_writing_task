@@ -1,6 +1,6 @@
 #!/bin/bash
 
-JournalDirectory='/home/daedalus/Documents/self_log/'
+JournalDirectory='/home/daedalus/gdrive/self_log/'
 TemplateDirectory='/home/daedalus/github/daily_practice/templates/'
 Date=$(date +%Y/%m/%d)
 
@@ -8,14 +8,15 @@ Created_Path="$JournalDirectory$Date"
 
 mkdir -p $Created_Path
 
-
+Insert_Date=$(date +"%A %m/%d/%Y")
 
 for file in $TemplateDirectory*.md; do
     word_to_be_removed="_template"
     study="Study"
     created_file=$(echo $(basename "${file%.*}") )
     created_file="${created_file//$word_to_be_removed/}.md"
-    if [ $created_file == *"Study"* ]; then
-      *cp -n "$file" "$Created_Path/$created_file"
+    if [ $created_file != *"Study"* ] && [ $created_file != *"decision"* ]; then
+      cp -n "$file" "$Created_Path/$created_file"
+      sed -i "/\[REPLACE\]/$Insert_Date/" "$Created_Path/$created_file"
     fi
 done

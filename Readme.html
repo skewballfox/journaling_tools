@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+        <title>Daily Tasks</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        <script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+    </head>
+    <body>
+        <h1 id="daily-tasks">Daily Tasks</h1>
+<p>Routine is at the heart of productivity for me, so I created this as a way of enforcing it. If I leave it up to me, I struggle to do things like keep a journal, because often my it's hard to bring my attention away from what is right in front of me. This makes the habit easier to start and maintain.</p>
+<h2 id="notes">Notes</h2>
+<p>Right now all this does is launches a few journals that I intend to keep daily through VS Code at specified times using systemd timers.</p>
+<p>I used VS Code instead of Atom because of the command line interface</p>
+<p>I used Systemd instead of Chron because I need to get better with it for some projects automating webscraping. slicing is super useful for resource management.</p>
+<p>I recently removed Tagging from both the dream journal and the evening journal, because tagging should be something that is automated. The way I look at it it's metadata, which is something I should be less concerned about directly. It's useful for analysis, but trying to write it manually is both cumbersome and error-prone.</p>
+<p>I removed weather, and places visited from the evening journal for similar reasons. it's metadata, and should be tracked by other methods.</p>
+<h2 id="todo">TODO</h2>
+<p>Find a way to syncronize between two computers with zero/extremely minimal data loss(empty file overwriting filled file, or a file getting filled with junk), planning on using drive</p>
+<p>Implement some kind of tagging system</p>
+<p>Build a scraper for weather data, while not related to the daily task, it is something that I feel should be used in within the larger context of self-tracking</p>
+<p>perhaps build a relational database around keeping this and other self-tracking data organized.</p>
+<h2 id="install">Install</h2>
+<p>If you use systemd all you need to do after downloading this repository is run the populate script with sudo permissions.</p>
+
+    </body>
+    </html>
