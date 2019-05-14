@@ -15,8 +15,9 @@ for file in $TemplateDirectory*.md; do
     study="Study"
     created_file=$(echo $(basename "${file%.*}") )
     created_file="${created_file//$word_to_be_removed/}.md"
-    if [ $created_file != *"Study"* ] && [ $created_file != *"decision"* ]; then
+    if [[ ${created_file} != *"Study"* ]] && [[ ${created_file} != *"decision"* ]]; then
       cp -n "$file" "$Created_Path/$created_file"
-      sed -i "/\[REPLACE\]/$Insert_Date/" "$Created_Path/$created_file"
+      echo "$Created_Path/$created_file"
+      sed -i "s@\[REPLACE\]@$Insert_Date@" "$Created_Path/$created_file"
     fi
 done

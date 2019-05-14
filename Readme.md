@@ -26,4 +26,4 @@ Build a scraper for weather data, while not related to the daily task, it is som
 perhaps build a relational database around keeping this and other self-tracking data organized. 
 
 ## Install 
-If you use systemd all you need to do after downloading this repository is run the populate script with sudo permissions. 
+If you use systemd all you need to do after downloading this repository is run the populate script with sudo permissions. if you are not on arch you will likely have to change the default location of the code command
