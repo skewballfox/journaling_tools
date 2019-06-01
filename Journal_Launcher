@@ -1,12 +1,11 @@
 #!/bin/bash
 
 echo '$1 = ' $1
-JournalDirectory='/home/daedalus/Documents/self_log/'
 
 Date=$(date +%Y/%m/%d)
 
 
-File_Path="$JournalDirectory$Date/"
+File_Path="$SLog_directory$Date/"
 
 
 File=$File_Path$1
@@ -14,7 +13,7 @@ File=$File_Path$1
 
 if [ -e "$File" ]; then
     echo "$File exists"
-    /usr/lib/code -n $File
+    urxvt termName:$! -e 'kak $File'
 else
     echo "ERROR: $File does not exists"
 fi
