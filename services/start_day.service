@@ -10,8 +10,8 @@ Environment="DISPLAY=:0"
 Environment="XAUTHORITY=/home/daedalus/.Xauthority"
 Type=forking
 User=daedalus
-WorkingDirectory=/home/daedalus/github/daily_practice/
-ExecStart=/home/daedalus/github/daily_practice/Journal_Launcher start_day.md
+WorkingDirectory=/home/daedalus/workspace/System_Tools/daily_practice/
+ExecStart=/home/daedalus/workspace/System_Tools/daily_practice/Journal_Launcher start_day.md
 
 [Install]
 WantedBy=user@.service

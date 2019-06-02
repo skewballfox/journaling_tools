@@ -1,45 +1,47 @@
 #!/bin/bash
 
 SystemDirectory='/etc/systemd/system/'
-TimerDirectory='/home/daedalus/github/daily_practice/timers/'
-ServiceDirectory='/home/daedalus/github/daily_practice/services/'
-SliceDirectory='/home/daedalus/github/daily_practice/slices/'
+
+
+service_list=()
+timer_list=()
 
 
 
-service_list=""
-timer_list=""
-
-
-
-for file in $TimerDirectory*.timer; do
+for file in timers/*.timer; do
+  echo $file
   if [[ $file != *"template"* ]]; then
       base_name=$(echo $(basename "${file%.*}") )
       base_file=$(echo $(basename "${file}") )
-      service_list="$service_list $base_name "
-      timer_list="$service_list $base_file "
-      cp -i $TimerDirectory$base_file $SystemDirectory$base_file
+      echo $base_file
+      service_list+=( $base_name)
+      timer_list+=( $base_file)
+      cp -i timers/$base_file $SystemDirectory$base_file
   fi
 done
 
-for file in $ServiceDirectory*.service; do
+for file in services/*.service; do
   if [[ $file != *"template"* ]]; then
       base_file=$(echo $(basename "${file}") )
-      cp -i $ServiceDirectory$base_file $SystemDirectory$base_file
+      echo $base_file
+      cp -i services/$base_file $SystemDirectory$base_file
   fi
 done
 
-for file in $SliceDirectory*.slice; do
+for file in slices/*.slice; do
   if [[ $file != *"template"* ]]; then
       base_file=$(echo $(basename "${file}") )
-      cp -i $SliceDirectory$base_file $SystemDirectory$base_file
+      echo $base_file
+      cp -i slices/$base_file $SystemDirectory$base_file
   fi
 done
 
-systemctl stop $service_list
+echo ${service_list[*]}
+
+systemctl stop ${service_list[*]}
 
 systemctl daemon-reload
 
-systemctl enable $timer_list
+systemctl enable ${timer_list[*]}
 
-#systemctl start $service_list
+systemctl start ${service_list[*]}

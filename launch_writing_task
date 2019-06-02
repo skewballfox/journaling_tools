@@ -1,16 +1,16 @@
-#!/bin/bash
+#!/bin/zsh
 
-JournalDirectory='/home/daedalus/gdrive/self_log/'
-TemplateDirectory='/home/daedalus/github/daily_practice/templates/'
+
+
 Date=$(date +%Y/%m/%d)
-
-Created_Path="$JournalDirectory$Date"
+#the Self log directory is stored in my zsh config
+Created_Path="$SLog_directory$Date"
 
 mkdir -p $Created_Path
 
 Insert_Date=$(date +"%A %m/%d/%Y")
 
-for file in $TemplateDirectory*.md; do
+for file in templates/*.md; do
     word_to_be_removed="_template"
     study="Study"
     created_file=$(echo $(basename "${file%.*}") )

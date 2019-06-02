@@ -7,8 +7,8 @@ Wants=launch_writing_task.timer
 [Service]
 Type=oneshot
 User=daedalus
-WorkingDirectory=/home/daedalus/github/daily_practice/
-ExecStart=/home/daedalus/github/daily_practice/launch_writing_task
+WorkingDirectory=/home/daedalus/workspace/System_Tools/daily_practice/
+ExecStart=/home/daedalus/workspace/System_Tools/daily_practice/launch_writing_task
 
 
 [Install]

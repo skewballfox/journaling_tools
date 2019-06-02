@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 echo '$1 = ' $1
 
@@ -13,7 +13,7 @@ File=$File_Path$1
 
 if [ -e "$File" ]; then
     echo "$File exists"
-    urxvt termName:$! -e 'kak $File'
+    gxi "$File"
 else
     echo "ERROR: $File does not exists"
 fi
