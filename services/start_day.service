@@ -1,14 +1,14 @@
 # /etc/systemd/system/start_day.service
 
 [Unit]
-Description=launch start of day log in vscode
+Description=launch start of day journal
 Wants=start_day.timer
 PartOf=graphical-session.target
 
 [Service]
 Environment="DISPLAY=:0"
 Environment="XAUTHORITY=/home/daedalus/.Xauthority"
-Type=simple
+Type=forking
 WorkingDirectory=%h/workspace/System_Tools/writing_tools
 ExecStart=%h/workspace/System_Tools/writing_tools/Journal_Launcher start_day.md
 

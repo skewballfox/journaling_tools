@@ -1,7 +1,7 @@
 # $HOME/.config/systemd/user/launch_writing_task.service
 
 [Unit]
-Description=Runs bash script to create directories based off date and create daily writing tasks
+Description=create directories based off date and create daily writing tasks
 Wants=launch_writing_task.timer
 
 [Service]

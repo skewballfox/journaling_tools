@@ -1,7 +1,7 @@
 # /etc/systemd/system/journal.service
 
 [Unit]
-Description=launch daily journal in vscode
+Description=launch daily journal
 Wants=journal.timer
 PartOf=graphical-session.target
 
@@ -9,7 +9,7 @@ PartOf=graphical-session.target
 Environment="DISPLAY=:0"
 Environment="XAUTHORITY=/home/daedalus/.Xauthority"
 EnvironmentFile=%E/environment.d/100-dir.conf
-Type=simple
+Type=forking
 WorkingDirectory=%h/workspace/System_Tools/writing_tools
 ExecStart=%h/workspace/System_Tools/writing_tools/Journal_Launcher journal.md
 
