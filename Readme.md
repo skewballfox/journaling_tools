@@ -1,19 +1,18 @@
-# Daily Tasks
+# Writing Tools
 
-Routine is at the heart of productivity for me, so I created this as a way of enforcing it. If I leave it up to me, I struggle to do things like keep a journal, because often my it's hard to bring my attention away from what is right in front of me. This makes the habit easier to start and maintain. 
+## Description
 
-## Notes 
-Right now all this does is launches a few journals that I intend to keep daily through VS Code at specified times using systemd timers. 
+This is a collection of scripts, template files, and user services for my daily writing. my templates are in markdown because it's easy to convert to other formats and is faster to write for me. 
 
-I used VS Code instead of Atom because of the command line interface
+I hope that through consistent practice I can both improve my productivity and have enough information to identify patterns via data analysis; as an added bonus I will improve my writing. 
 
-I used Systemd instead of Chron because I need to get better with it for some projects automating webscraping. slicing is super useful for resource management. 
+## Notes
 
-I recently removed Tagging from both the dream journal and the evening journal, because tagging should be something that is automated. The way I look at it it's metadata, which is something I should be less concerned about directly. It's useful for analysis, but trying to write it manually is both cumbersome and error-prone. 
+At the moment only 3 of the templates are controlled via timers: the dream journal, the start of day notes, and the nightly journal. These files are organized in a directory structure via the date, as this seemed like the best practice for something I'm hoping to do on a daily basis.
 
-I removed weather, and places visited from the evening journal for similar reasons. it's metadata, and should be tracked by other methods. 
+I'm still trying to figure out how to best organize and use the rest of the templates. I'm not sure a date based directory structure would be the best approach to take for a set of files that I may not touch at all, or may use multiple times a day. On a somewhat related not I plan on launching of these files via i3 keybinds.
 
-I removed emotions because trying to document them is tedious, and I need to get in the habit of using more emotional language. The goal is to be able to pick up what emotions I was experiencing through Analysis of the written parts.
+if you need to see the keybinds or things not connected to this repository (such as environment variables), you can find those in my [repository](https://www.github.com/skewballfox/.cfg) containing my config files. 
 
 ## TODO
 
@@ -25,5 +24,14 @@ Build a scraper for weather data, while not related to the daily task, it is som
 
 perhaps build a relational database around keeping this and other self-tracking data organized. 
 
+move my writing templates to my ~/Templates Directory and symlink it(makes more sense to me than having them in my directory for coding).
+
+rewrite the systemd script to create user specific services rather than system-wide services. For one, it means the script no longer needs to be run with sudo. Second, if you are in a multi-user environment I don't think other users would appreciate this. 
+
+if possible, I would like to condense this down to one service which is passed variables to indicate the file name when launched by specified timers. This may not be in the realm of possibility or may take more effort than having damn near identical services per target.
+
+may set the editor to use(with different commandline arguments) in an environment variable, as in leau of the above possiblity this would reduce the amount of changes you needed to make if you wanted to switch to a different editor/setup.
+
 ## Install 
-If you use systemd all you need to do after downloading this repository is run the populate script with sudo permissions. if you are not on arch you will likely have to change the default location of the code command
+
+If you use systemd all you need to do after downloading this repository is run the populate script (currently with sudo permissions). the systemd services are set to use kakoune at the moment, but I've used them with both vscode and gxi. 

@@ -1,4 +1,4 @@
-# /etc/systemd/system/launch_writing_task.service
+# $HOME/.config/systemd/user/launch_writing_task.service
 
 [Unit]
 Description=Runs bash script to create directories based off date and create daily writing tasks
@@ -6,10 +6,9 @@ Wants=launch_writing_task.timer
 
 [Service]
 Type=oneshot
-User=daedalus
-WorkingDirectory=/home/daedalus/workspace/System_Tools/daily_practice/
-ExecStart=/home/daedalus/workspace/System_Tools/daily_practice/launch_writing_task
+WorkingDirectory=%h/workspace/System_Tools/writing_tools
+ExecStart=%h/workspace/System_Tools/writing_tools/launch_writing_task
 
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target

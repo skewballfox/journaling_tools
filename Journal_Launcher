@@ -1,19 +1,25 @@
 #!/bin/zsh
 
+
+
 echo '$1 = ' $1
 
 Date=$(date +%Y/%m/%d)
 
 
-File_Path="$SLog_directory$Date/"
+File_Path="$HOME/gdrive/self_log/$Date/"
 
 
 File=$File_Path$1
 
+#md_editor=$(urxvt -e "kak" "$File")
+md_editor=$(code-oss "$File")
+
 
 if [ -e "$File" ]; then
     echo "$File exists"
-    gxi "$File"
+    #$md_editor 
+    code-oss -n "$File" &
 else
     echo "ERROR: $File does not exists"
 fi

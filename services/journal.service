@@ -8,11 +8,11 @@ PartOf=graphical-session.target
 [Service]
 Environment="DISPLAY=:0"
 Environment="XAUTHORITY=/home/daedalus/.Xauthority"
-Type=forking
-User=daedalus
-WorkingDirectory=/home/daedalus/workspace/System_Tools/daily_practice/
-ExecStart=/home/daedalus/workspace/System_Tools/daily_practice/Journal_Launcher journal.md
+EnvironmentFile=%E/environment.d/100-dir.conf
+Type=simple
+WorkingDirectory=%h/workspace/System_Tools/writing_tools
+ExecStart=%h/workspace/System_Tools/writing_tools/Journal_Launcher journal.md
 
 
 [Install]
-WantedBy=user@.service
+WantedBy=default.target

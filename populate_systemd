@@ -1,7 +1,8 @@
 #!/bin/bash
 
-SystemDirectory='/etc/systemd/system/'
+SystemDirectory="$HOME/.config/systemd/user/"
 
+echo $SystemDirectory
 
 service_list=()
 timer_list=()
@@ -16,7 +17,7 @@ for file in timers/*.timer; do
       echo $base_file
       service_list+=( $base_name)
       timer_list+=( $base_file)
-      cp -i timers/$base_file $SystemDirectory$base_file
+      #cp -i timers/$base_file $SystemDirectory$base_file
   fi
 done
 
@@ -32,16 +33,16 @@ for file in slices/*.slice; do
   if [[ $file != *"template"* ]]; then
       base_file=$(echo $(basename "${file}") )
       echo $base_file
-      cp -i slices/$base_file $SystemDirectory$base_file
+      #cp -i slices/$base_file $SystemDirectory$base_file
   fi
 done
 
 echo ${service_list[*]}
 
-systemctl stop ${service_list[*]}
+systemctl --user stop ${service_list[*]}
 
-systemctl daemon-reload
+systemctl --user daemon-reload
 
-systemctl enable ${timer_list[*]}
+systemctl --user enable ${timer_list[*]}
 
-systemctl start ${service_list[*]}
+systemctl --user start ${service_list[*]}

@@ -4,7 +4,7 @@
 
 Date=$(date +%Y/%m/%d)
 #the Self log directory is stored in my zsh config
-Created_Path="$SLog_directory$Date"
+Created_Path="$SLog_directory/$Date"
 
 mkdir -p $Created_Path
 
