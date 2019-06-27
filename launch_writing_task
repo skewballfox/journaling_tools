@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-
+daily_files=(`cat list/daily.txt`)
 
 Date=$(date +%Y/%m/%d)
 #the Self log directory is stored in my zsh config
@@ -10,13 +10,11 @@ mkdir -p $Created_Path
 
 Insert_Date=$(date +"%A %m/%d/%Y")
 
-for file in templates/*.md; do
+for template in "${daily_files[@]}"; do
     word_to_be_removed="_template"
-    study="Study"
-    created_file=$(echo $(basename "${file%.*}") )
-    created_file="${created_file//$word_to_be_removed/}.md"
+    created_file=${template/$word_to_be_removed}
     if [[ ${created_file} != *"Study"* ]] && [[ ${created_file} != *"decision"* ]]; then
-      cp -n "$file" "$Created_Path/$created_file"
+      cp -n "templates/$template" "$Created_Path/$created_file"
       echo "$Created_Path/$created_file"
       sed -i "s@\[REPLACE\]@$Insert_Date@" "$Created_Path/$created_file"
     fi
