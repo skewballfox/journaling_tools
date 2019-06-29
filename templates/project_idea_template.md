@@ -6,7 +6,7 @@
 
 ## Libraries if non-standard
 
-## Tools
+## Tools and Dependencies
 
 ## Ideas
 
