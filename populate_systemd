@@ -17,7 +17,7 @@ for file in timers/*.timer; do
       echo $base_file
       service_list+=( $base_name)
       timer_list+=( $base_file)
-      #cp -i timers/$base_file $SystemDirectory$base_file
+      cp -i timers/$base_file $SystemDirectory$base_file
   fi
 done
 

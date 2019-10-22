@@ -6,8 +6,8 @@ Wants=launch_writing_task.timer
 
 [Service]
 Type=oneshot
-WorkingDirectory=%h/workspace/System_Tools/writing_tools
-ExecStart=%h/workspace/System_Tools/writing_tools/launch_writing_task
+WorkingDirectory=%h/Workspace/Writing/writing_tools
+ExecStart=%h/Workspace/Writing/writing_tools/launch_writing_task
 
 
 [Install]

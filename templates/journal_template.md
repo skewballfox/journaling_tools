@@ -10,7 +10,6 @@
 
 ## What have I learned today?
 
-
 ## Any Thoughts?
 
 

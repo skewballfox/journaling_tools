@@ -11,8 +11,7 @@ At the moment only 3 of the templates are controlled via timers: the dream journ
 
 I changed the launcher to use a list rather than the templates directory for creating the daily files, it's less to change with the creation of each new file, and it's easier to read. 
 
-
-if you need to see the keybinds or things not connected to this repository (such as environment variables), you can find those in my [repository](https://www.github.com/skewballfox/.cfg) containing my config files. 
+I removed the animals, people, weather, and locations from the dream, this is something that should be written out and parsed from natural language
 
 ## TODO
 

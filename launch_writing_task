@@ -1,10 +1,13 @@
-#!/bin/zsh
+#!/bin/bash
 
 daily_files=(`cat list/daily.txt`)
 
 Date=$(date +%Y/%m/%d)
 #the Self log directory is stored in my zsh config
-Created_Path="$SLog_directory/$Date"
+Created_Path="$HOME/Documents/self_log/$Date"
+
+
+printenv
 
 mkdir -p $Created_Path
 

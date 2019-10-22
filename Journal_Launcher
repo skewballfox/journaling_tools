@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 
 
@@ -7,7 +7,7 @@ echo '$1 = ' $1
 Date=$(date +%Y/%m/%d)
 
 
-File_Path="$HOME/gdrive/self_log/$Date/"
+File_Path="$HOME/Documents/self_log/$Date/"
 
 
 File=$File_Path$1
@@ -19,7 +19,7 @@ echo "$File"
 
 if [ -e "$File" ]; then
     echo "$File exists"
-    termite -e "kak"\ "$File" &
+    gedit --new-window "$File" &
 else
     echo "ERROR: $File does not exists"
 fi

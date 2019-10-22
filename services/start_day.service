@@ -6,11 +6,9 @@ Wants=start_day.timer
 PartOf=graphical-session.target
 
 [Service]
-Environment="DISPLAY=:0"
-Environment="XAUTHORITY=/home/daedalus/.Xauthority"
 Type=forking
-WorkingDirectory=%h/workspace/System_Tools/writing_tools
-ExecStart=%h/workspace/System_Tools/writing_tools/Journal_Launcher start_day.md
+WorkingDirectory=%h/Workspace/Writing/writing_tools
+ExecStart=%h/Workspace/Writing/writing_tools/Journal_Launcher start_day.md
 
 [Install]
 WantedBy=default.target
