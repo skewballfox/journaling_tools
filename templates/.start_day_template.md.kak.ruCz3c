@@ -1,14 +1,12 @@
-# Morning Journal for {REPLACE}
+# Morning Journal for [REPLACE]
 
 ## Morning Routine
-
-- [ ] Log Dreams
-- [ ] take meds, start coffee, grab shower
-- [ ] meditate
-- [ ] review task list
+[] Log Dreams
+[] take meds, start coffee, grab shower
+[] meditate
+[] review task list
 
 ## Medication Log
-
 {Morning_Medications}
 
 ## Meditation Log (keep it brief)

@@ -19,6 +19,6 @@ for template in "${daily_files[@]}"; do
     if [[ ${created_file} != *"Study"* ]] && [[ ${created_file} != *"decision"* ]]; then
       cp -n "templates/$template" "$Created_Path/$created_file"
       echo "$Created_Path/$created_file"
-      sed -i "s@\[REPLACE\]@$Insert_Date@" "$Created_Path/$created_file"
+      sed -i "s@\{REPLACE\}@$Insert_Date@" "$Created_Path/$created_file"
     fi
 done
