@@ -2,31 +2,24 @@
 
 ## Description
 
-This is a collection of scripts, template files, and user services for my daily writing. my templates are in markdown because it's easy to convert to other formats and is faster to write for me. 
+This is a set of tools for automating the creation of journals and notes based off templates. The best way to make a habit of something is to make it easy. 
+
+It currently supports keyword replacement in both the naming of the file and the file itself. It uses systemd at user level to launch the journals at specified times. 
+
+The directory structure of the journal is something like a time based cache. I primarily use ranger to view my files and traverse my directories, so I like tend to like trees. the files are sorted by creation date into 5 different directories, this week, last week, this quarter, this year, and everything else. 
 
 
 ## Notes
 
-At the moment only 3 of the templates are controlled via timers: the dream journal, the start of day notes, and the nightly journal. These files are organized in a directory structure via the date, as this seemed like the best practice for something I'm hoping to do on a daily basis. The timers and the services are user services, which means the creation doesn't require sudo permissions, and isn't going to affect other users.  
+This is mainly meant for personal use, but if this seems like something you want to use or add to feel free. I do plan on adding things like document tagging later on and keyword insertion based on the output of certain commands(make it easier to view things like history), among other things. but no idea when I'll pick up working on this project again. 
 
-I changed the launcher to use a list rather than the templates directory for creating the daily files, it's less to change with the creation of each new file, and it's easier to read. 
-
-I removed the animals, people, weather, and locations from the dream, this is something that should be written out and parsed from natural language
-
-## TODO
-
-Find a way to syncronize between two computers with zero/extremely minimal data loss(empty file overwriting filled file, or a file getting filled with junk), planning on using drive
-
-Implement some kind of tagging system
-
-Build a scraper for weather data, while not related to the daily task, it is something that I feel should be used in within the larger context of self-tracking
-
-perhaps build a relational database around keeping this and other self-tracking data organized. 
-
-if possible, I would like to condense this down to one service which is passed variables to indicate the file name when launched by specified timers. This may not be in the realm of possibility or may take more effort than having damn near identical services per target.
-
-may set the editor to use(with different commandline arguments) in an environment variable, as in leau of the above possiblity this would reduce the amount of changes you needed to make if you wanted to switch to a different editor/setup.
 
 ## Install 
 
-If you use systemd all you need to do after downloading this repository is run the populate script. the systemd user services are set to use kakoune at the moment, but I've used them with both vscode and gxi. 
+The python code uses modules from the standard library and nothing else, so it should work out of the box
+
+If you use systemd all you need to do after downloading this repository is run the populate script. 
+the systemd user services are set to use kakoune at the moment, but I've used them with both vscode and gxi. 
+Depending on your DE and how you launch your graphical session, systemd user services may or may not have access to the display environment, if you have a minimal install, you may want to 
+append `systemctl --user import-environment DISPLAY` to whatever you use to lauch your xsession. 
+

@@ -1,13 +1,17 @@
+
+
 [Unit]
-Description=launch dream journal
-Wants=dream.timer
+Description=launch mid-day journal
+Wants=mid-day.timer
 PartOf=graphical-session.target
 
 [Service]
+#EnvironmentFile=%E/environment.d/100-dir.conf
 #changing from forking to simple to avoid timeout error
 Type=simple
 WorkingDirectory=%h/Workspace/Writing/journaling_tools
-ExecStart=/usr/bin/python %h/Workspace/Writing/journaling_tools/journal.py -l dream
+ExecStart=/usr/bin/python %h/Workspace/Writing/journaling_tools/journal.py -l mid-day
+
 
 [Install]
 WantedBy=default.target

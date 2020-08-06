@@ -1,6 +1,8 @@
+# /etc/systemd/system/journal.service
+
 [Unit]
-Description=launch daily journal
-Wants=journal.timer
+Description=launch weekly journal
+Wants=weekly.timer
 PartOf=graphical-session.target
 
 [Service]
@@ -8,7 +10,7 @@ PartOf=graphical-session.target
 #changing from forking to simple to avoid timeout error
 Type=simple
 WorkingDirectory=%h/Workspace/Writing/journaling_tools
-ExecStart=/usr/bin/python %h/Workspace/Writing/journaling_tools/journal.py -l nightly
+ExecStart=/usr/bin/python %h/Workspace/Writing/journaling_tools/journal.py -l weekly
 
 
 [Install]

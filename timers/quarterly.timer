@@ -1,0 +1,10 @@
+[Unit]
+Description=Launch a quarterly journal to plan the next 3 months
+
+[Timer]
+#The first Saturday of the quarter
+OnCalendar=Sat *-01,04,07,10-01/7 12:00:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target

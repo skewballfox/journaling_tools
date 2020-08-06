@@ -1,13 +1,16 @@
+
 [Unit]
-Description=launch dream journal
-Wants=dream.timer
+Description=launch quarterly journal
+Wants=quarterly.timer
 PartOf=graphical-session.target
 
 [Service]
+#EnvironmentFile=%E/environment.d/100-dir.conf
 #changing from forking to simple to avoid timeout error
 Type=simple
 WorkingDirectory=%h/Workspace/Writing/journaling_tools
-ExecStart=/usr/bin/python %h/Workspace/Writing/journaling_tools/journal.py -l dream
+ExecStart=/usr/bin/python %h/Workspace/Writing/journaling_tools/journal.py -l quarterly
+
 
 [Install]
 WantedBy=default.target

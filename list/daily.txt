@@ -1,3 +1,0 @@
-journal_template.md
-dream_journal_template.md
-start_day_template.md

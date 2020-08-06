@@ -2,7 +2,7 @@
 Description=Launch a daily journal later in the evening
 
 [Timer]
-OnCalendar=*-*-* 20:00:00
+OnCalendar=*-*-* 19:00:00
 Persistent=true
 
 [Install]

@@ -1,0 +1,54 @@
+{
+    "journal_dir": "~/Documents/self_log/",
+    "template_dir": "./templates/",
+    "dream": {
+        "template": "dream_journal_template.md",
+        "name": "%Y%m%d",
+        "dir": "dreams"
+    },
+    "nightly": {
+        "template": "journal_template.md",
+        "name": "%Y%m%d",
+        "dir": "nightly"
+    },
+    "mid-day": {
+        "template": "mid_day_template.md",
+        "name": "%Y%m%d",
+        "dir": "mid-day"
+    },
+    "weekly": {
+        "template": "weekly_template.md",
+        "name": "%YQQUART_wkWEEK",
+        "dir": "plans",
+        "keys": {
+            "Book at the top of the Queue": "LAST_WEEK_BOOK",
+            "This weeks Priorities": "LAST_WEEK_PRIORITIES"
+        }
+    },
+    "quarterly": {
+        "template": "quarterly_template.md",
+        "name": "%YQQUART",
+        "dir": "plans",
+        "keys": {
+            "Goals for the Quarter": "PQGOAL",
+            "Plans for change": "PQPLAN"
+        },
+        "internal_values": {
+            "quarter-start": "iso-start-date"
+        }
+    },
+    "semi-yearly": {
+        "template": "semi_yearly_template.md",
+        "name": "%Y%m",
+        "dir": "plans",
+        "keys": {
+            "Goals for the next 6 months": "PSEMIGOALS",
+            "PQPLAN": "Plans for change"
+        }
+    },
+    "decision": {
+        "template": "decision_making_template.md",
+        "name": "temp_decision",
+        "dir": "Note"
+    }
+}

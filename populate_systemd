@@ -45,4 +45,4 @@ systemctl --user daemon-reload
 
 systemctl --user enable ${timer_list[*]}
 
-systemctl --user start ${service_list[*]}
+#systemctl --user start ${service_list[*]}

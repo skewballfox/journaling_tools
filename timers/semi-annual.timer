@@ -1,0 +1,10 @@
+[Unit]
+Description=Launch a semi-annual journal to plan the next 6 months
+
+[Timer]
+#The last Saturday before the the halfway point
+OnCalendar=Sat *-06,12~07/1 12:00:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target

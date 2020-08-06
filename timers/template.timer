@@ -1,9 +1,0 @@
-[Unit]
-Description=
-
-[Timer]
-OnCalendar=
-Persistent=
-
-[Install]
-WantedBy=timers.target
