@@ -175,6 +175,17 @@ def update_internal_data(internal_values: dict):
     safely_update_json("internal_values.json")
 
 
+def launch(journal: str) -> bool:
+    prelaunch_size = getsize(journal)
+    # TODO: implement a better launcher, with error catching
+    subprocess.run(["alacritty", "-e", "kak", journal])
+    if prelaunch_size == getsize(journal):
+        subprocess.run(["rm", journal])
+        return False
+    else:
+        return True
+
+
 if __name__ == "__main__":
     config = load_json("config.json")
     keyword_data = load_json("keyword_data.json")
@@ -217,8 +228,10 @@ if __name__ == "__main__":
 
         create_journal(template, journal, replacement_map)
 
-        # TODO: implement a better launcher, with error catching
-        subprocess.run(["alacritty", "-e", "kak", journal])
+        journal_status = launch(journal)
+
+        if journal_status == False:
+            sys.exit(0)
 
         # update the keywords
         if "keys" in config[sys.argv[2]].keys():
@@ -266,7 +279,10 @@ if __name__ == "__main__":
         file_name = replace_keywords(file_name, replacement_map)
         journal += file_name
         create_journal(template, journal, replacement_map)
-        subprocess.run(["alacritty", "-e", "kak", journal])
+        status = launch(journal)
+        if status == False:
+            print("this worked")
+            sys.exit(0)
         # if file was saved before exiting
         if isfile(journal):
             keyword_data = update_keyword_data(
